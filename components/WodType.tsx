@@ -7,12 +7,13 @@ const WodType = ({wod, setWodType}) => {
       const result = prev.map(el => {
         return el.title === wod.title ? {...el, selected: !el.selected} : el;
       });
-      console.log(result);
       return result;
     });
   };
   return (
-    <Pressable style={styles.container} onPress={() => onPress(wod)}>
+    <Pressable
+      style={[styles.container, wod.selected && {backgroundColor: 'red'}]}
+      onPress={() => onPress(wod)}>
       <Text>{wod.title}</Text>
     </Pressable>
   );

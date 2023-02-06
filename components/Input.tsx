@@ -6,12 +6,14 @@ interface Props {
   value: string;
   onChangeValue: Dispatch<SetStateAction<string>>;
   multiline: boolean;
+  placeholder: string;
 }
 const Input: React.FC<Props> = ({
   label,
   value,
   onChangeValue,
   multiline = false,
+  placeholder,
 }) => {
   return (
     <View style={styles.block}>
@@ -22,6 +24,7 @@ const Input: React.FC<Props> = ({
           value={value}
           onChangeText={onChangeValue}
           multiline={multiline}
+          placeholder={placeholder}
         />
       </View>
     </View>
