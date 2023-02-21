@@ -18,7 +18,6 @@ const PictureButton = () => {
       presentationStyle: 'fullScreen',
     });
     if (res.errorCode) {
-      console.log('sss');
       //fix : 카메라 모듈에서 에러발생시 처리 필요
       Alert.alert(res.errorCode);
     } else if (res && res?.assets && res?.assets.length) {
